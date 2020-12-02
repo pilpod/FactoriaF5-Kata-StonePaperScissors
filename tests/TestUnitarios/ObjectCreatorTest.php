@@ -11,8 +11,7 @@ class ObjectCreatorTest extends TestCase
     {
         $stone = new ObjectCreator();
 
-        $weapon = $stone->ReturnObject('Stone');
-        $result = $weapon->ObjectType();
+        $result = $stone->ReturnObject('Stone');
 
         $expectedResult = 'Stone';
         $this->assertEquals($expectedResult, $result);
@@ -22,8 +21,7 @@ class ObjectCreatorTest extends TestCase
     {
         $paper = new ObjectCreator();
 
-        $weapon = $paper->ReturnObject('Paper');
-        $result = $weapon->ObjectType();
+        $result = $paper->ReturnObject('Paper');
 
         $expectedResult = 'Paper';
         $this->assertEquals($expectedResult, $result);
@@ -33,8 +31,7 @@ class ObjectCreatorTest extends TestCase
     {
         $paper = new ObjectCreator();
 
-        $weapon = $paper->ReturnObject('Scissors');
-        $result = $weapon->ObjectType();
+        $result = $paper->ReturnObject('Scissors');
 
         $expectedResult = 'Scissors';
         $this->assertEquals($expectedResult, $result);

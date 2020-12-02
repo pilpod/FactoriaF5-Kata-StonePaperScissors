@@ -7,15 +7,21 @@ class ObjectCreator {
     public function ReturnObject($type)
     {
         if($type === 'Stone') {
-            return new Stone();
+            $object = new Stone();
+            $stone = $object->ObjectType();
+            return $stone;
         }
 
         if($type === 'Paper') {
-            return new Paper();
+            $object = new Paper();
+            $paper = $object->ObjectType();
+            return $paper;
         }
 
         if($type === 'Scissors') {
-            return new Scissors();
+            $object = new Scissors();
+            $scissors = $object->ObjectType();
+            return $scissors;
         }
     }
 

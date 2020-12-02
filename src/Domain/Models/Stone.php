@@ -12,6 +12,8 @@ class Stone implements IObject
         $this->type = 'Stone';
         return $this->type;
     }
+
+
 }
 
 ?>
