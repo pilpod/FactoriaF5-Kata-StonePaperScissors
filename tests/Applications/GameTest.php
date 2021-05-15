@@ -5,21 +5,33 @@ namespace Tests\Applications;
 use PHPUnit\Framework\TestCase;
 use App\Applications\Game;
 
+use App\Models\Stone;
+use App\Models\Scissors;
+use App\Models\Paper;
+
 class GameTest extends TestCase {
 
-    private Game $game;
+    private Object $stone;
+    private Object $paper;
+    private Object $scissors;
 
     protected function setUp() : void
     {
         parent::setUp();
-        $this->game = new Game(); 
+        $this->stone = new Stone;
+        $this->paper = new Paper;
+        $this->scissors = new Scissors;
     }
     
-    public function test_Game_exit()
-    {
-        $game = new Game();
 
-        $this->assertInstanceOf(Game::class, $game);
+
+    public function test_Stone_win_Scissors()
+    {
+        $game = new Game($this->stone, $this->scissors);
+
+        $gameResult = $game->showResult();
+
+        $this->assertEquals('Stone win', $gameResult);
     }
 
 }
