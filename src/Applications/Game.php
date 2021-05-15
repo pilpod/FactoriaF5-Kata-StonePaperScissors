@@ -33,14 +33,19 @@ class Game {
         $paper = $this->paperFactory->createObject();
         $scissors = $this->scissorsFactory->createObject();
 
-        if($this->object1 == $stone && $this->object2 == $scissors)
+        if($this->object1 == $stone && $this->object2 == $scissors || $this->object2 == $stone && $this->object1 == $scissors)
         {
             return 'Stone win';
         }
 
-        if($this->object1 == $stone && $this->object2 == $paper)
+        if($this->object1 == $stone && $this->object2 == $paper || $this->object2 == $stone && $this->object1 == $paper)
         {
             return 'Paper win';
+        }
+
+        if($this->object1 == $paper && $this->object2 == $scissors || $this->object2 == $paper && $this->object1 == $scissors)
+        {
+            return 'Scissors win';
         }
 
         return 'Tie';

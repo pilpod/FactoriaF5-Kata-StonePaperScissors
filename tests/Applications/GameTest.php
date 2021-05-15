@@ -23,15 +23,31 @@ class GameTest extends TestCase {
         $this->scissors = new Scissors;
     }
     
-
-
-    public function test_Stone_win_Scissors()
+    public function test_Stone_win_vs_Scissors()
     {
         $game = new Game($this->stone, $this->scissors);
 
         $gameResult = $game->showResult();
 
         $this->assertEquals('Stone win', $gameResult);
+    }
+
+    public function test_Stone_lose_vs_Paper()
+    {
+        $game = new Game($this->stone, $this->paper);
+
+        $gameResult = $game->showResult();
+
+        $this->assertEquals('Paper win', $gameResult);
+    }
+
+    public function test_Paper_lose_vs_Scissors()
+    {
+        $game = new Game($this->paper, $this->scissors);
+
+        $gameResult = $game->showResult();
+
+        $this->assertEquals('Scissors win', $gameResult);
     }
 
 }
